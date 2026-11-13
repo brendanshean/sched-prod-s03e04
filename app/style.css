@@ -1,0 +1,45 @@
+:root { color-scheme: dark; font: 16px/1.5 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #0b1020; color: #e7edf9; }
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; background: radial-gradient(circle at 85% 0%, #172b47 0, #0b1020 36rem); }
+button { font: inherit; }
+.shell { max-width: 1180px; min-height: 100vh; margin: auto; padding: 0 24px; display: flex; flex-direction: column; }
+.page-header { padding: 30px 0 38px; }
+.brand { color: #b8c6dd; font-size: .875rem; font-weight: 700; letter-spacing: .03em; display: flex; gap: 10px; align-items: center; }
+.brand-mark { width: 12px; height: 12px; border: 3px solid #59d5b8; border-radius: 4px; transform: rotate(45deg); }
+.slash { color: #64748b; }
+.header-line { display: flex; justify-content: space-between; align-items: end; gap: 24px; padding-top: 52px; }
+.eyebrow { margin: 0 0 8px; color: #59d5b8; font-size: .75rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+h1 { margin: 0; font-size: clamp(2rem, 4vw, 3.25rem); line-height: 1.1; letter-spacing: -.045em; }
+.intro { max-width: 40rem; margin: 14px 0 0; color: #aab8ce; }
+.live-panel { display: inline-flex; align-items: center; gap: 9px; min-width: 220px; padding: 10px 14px; border: 1px solid #2a3b55; border-radius: 999px; color: #b8c6dd; background: #152136; font-size: .78rem; white-space: nowrap; }
+.live-dot { width: 8px; height: 8px; flex: 0 0 auto; border-radius: 50%; background: #59d5b8; box-shadow: 0 0 0 4px #59d5b825; }
+.error { color: #ffb2b2; }
+main { flex: 1; padding-bottom: 56px; }
+.list-heading { display: flex; align-items: baseline; justify-content: space-between; border-bottom: 1px solid #33435a; padding-bottom: 15px; }
+h2 { margin: 0; font-size: 1rem; }
+.list-heading span { color: #91a1b8; font-size: .85rem; }
+.loader, .empty { margin: 0; padding: 48px 24px; color: #aab8ce; text-align: center; }
+.loader { display: flex; justify-content: center; align-items: center; gap: 12px; }
+.spinner { width: 18px; height: 18px; border: 2px solid #4c5b70; border-top-color: #59d5b8; border-radius: 50%; animation: spin .7s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.list { margin: 0; padding: 0; list-style: none; }
+.incident-row { display: grid; grid-template-columns: 1fr auto; gap: 10px 20px; padding: 20px 0; border-bottom: 1px solid #25344a; }
+.row-top { display: flex; align-items: center; gap: 12px; }
+.incident-id { color: #8da2c0; font: 700 .8rem ui-monospace, SFMono-Regular, Menlo, monospace; }
+.severity { padding: 3px 8px; border: 1px solid #4a5d74; border-radius: 5px; color: #d4e0f2; background: #1b2b42; font: 700 .7rem ui-monospace, SFMono-Regular, Menlo, monospace; text-transform: uppercase; }
+.severity.sev1 { color: #ffc4bc; border-color: #9a4148; background: #4a222e; }
+.severity.sev2 { color: #ffd99e; border-color: #836238; background: #413320; }
+.summary { grid-column: 1; margin: 0; font-weight: 650; font-size: 1.06rem; }
+.row-details { grid-column: 1; display: flex; gap: 14px; flex-wrap: wrap; color: #9eafc8; font-size: .82rem; }
+.row-details time { font-variant-numeric: tabular-nums; }
+.row-action { grid-column: 2; grid-row: 1 / 4; align-self: center; }
+.row-action button { min-width: 84px; padding: 8px 14px; border: 1px solid #53cdb2; border-radius: 7px; background: #133e42; color: #b9fff0; font-weight: 700; cursor: pointer; }
+.row-action button:hover:not(:disabled), .row-action button:focus-visible { background: #1c5b5c; outline: 2px solid #79f5d9; outline-offset: 2px; }
+.row-action button:disabled { opacity: .65; cursor: wait; }
+.acked { color: #8be1c5; font-size: .82rem; font-weight: 700; }
+.acked::before { content: '✓'; margin-right: 6px; }
+footer { display: flex; justify-content: space-between; gap: 20px; margin-top: auto; padding: 23px 0 30px; border-top: 1px solid #25344a; color: #8495ad; font-size: .75rem; }
+footer code { font: inherit; overflow-wrap: anywhere; }
+[hidden] { display: none !important; }
+@media (max-width: 680px) { .shell { padding: 0 16px; } .page-header { padding-top: 22px; } .header-line { display: block; padding-top: 38px; } .live-panel { margin-top: 24px; } .incident-row { gap: 8px 12px; } .summary { font-size: .98rem; } .row-action { grid-row: 1 / 3; } .row-details { grid-column: 1 / -1; } footer { flex-direction: column; gap: 4px; } }
+@media (prefers-reduced-motion: reduce) { .spinner { animation: none; } }

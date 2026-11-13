@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="build" content="__BUILD_SHA__" />
+    <title>sched-prod · incident board</title>
+    <meta name="description" content="Live incidents for the sched-prod on-call team." />
+    <link rel="stylesheet" href="style.css" />
+    <script type="module" src="app.js"></script>
+  </head>
+  <body>
+    <div class="shell">
+      <header class="page-header">
+        <div class="brand"><span class="brand-mark" aria-hidden="true"></span> sched-prod <span class="slash">/</span> on-call</div>
+        <div class="header-line">
+          <div>
+            <p class="eyebrow">Incident operations</p>
+            <h1>Tonight's incidents</h1>
+            <p class="intro">A live view of what needs attention. Acknowledge an incident when you take it.</p>
+          </div>
+          <div class="live-panel" aria-live="polite">
+            <span class="live-dot" aria-hidden="true"></span>
+            <span data-testid="status">Connecting…</span>
+          </div>
+        </div>
+      </header>
+      <main data-testid="board" aria-busy="true">
+        <div class="list-heading"><h2>Incident feed</h2><span data-testid="incident-count">— incidents</span></div>
+        <div data-testid="loader" class="loader" role="status" aria-label="Loading incidents">
+          <span class="spinner" aria-hidden="true"></span> Loading incidents…
+        </div>
+        <p data-testid="empty" class="empty" hidden>No incidents right now. This board will keep watching.</p>
+        <ul data-testid="incident-list" class="list" hidden></ul>
+      </main>
+      <footer><span>sched-prod incident board</span><span>Build <code data-testid="build-sha">__BUILD_SHA__</code></span></footer>
+    </div>
+  </body>
+</html>
