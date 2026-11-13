@@ -18,7 +18,7 @@
           <div>
             <p class="eyebrow">Incident operations</p>
             <h1>Tonight's incidents</h1>
-            <p class="intro">A live view of what needs attention. Acknowledge an incident when you take it.</p>
+            <p class="intro">A live view of what needs attention. Open an incident to acknowledge it.</p>
           </div>
           <div class="live-panel" aria-live="polite">
             <span class="live-dot" aria-hidden="true"></span>
@@ -34,6 +34,20 @@
         <p data-testid="empty" class="empty" hidden>No incidents right now. This board will keep watching.</p>
         <ul data-testid="incident-list" class="list" hidden></ul>
       </main>
+      <aside data-testid="incident-panel" class="incident-panel" role="dialog" aria-labelledby="panel-title" hidden>
+        <div class="panel-heading">
+          <p class="eyebrow">Incident details</p>
+          <button data-testid="panel-close" class="panel-close" type="button" aria-label="Close incident panel">Close</button>
+        </div>
+        <h2 data-testid="panel-title" id="panel-title"></h2>
+        <span data-testid="panel-severity" class="severity"></span>
+        <p data-testid="panel-summary" class="panel-summary"></p>
+        <p class="panel-details"><span data-testid="panel-service"></span><time data-testid="panel-opened"></time></p>
+        <div class="panel-action">
+          <button data-testid="panel-ack" type="button"></button>
+          <span data-testid="panel-acked" class="acked" hidden>Acknowledged</span>
+        </div>
+      </aside>
       <footer><span>sched-prod incident board</span><span>Build <code data-testid="build-sha">__BUILD_SHA__</code></span></footer>
     </div>
   </body>

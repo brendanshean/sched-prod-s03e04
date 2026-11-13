@@ -13,8 +13,10 @@ course's incident API. Read `plan.md` first, then the four ready issues in `issu
 4. Deploy `dist/` to your own public **https** address — any static host works (GitHub Pages, Cloudflare
    Pages or Workers, Netlify, Vercel's production URL, …).
 
-The board shows a loader until the first API response, sorts incidents newest first, polls every two
-seconds, and acknowledges an incident through the supplied API client. Times are formatted in the
+The board shows a loader until the first API response, sorts incidents newest first, and polls every two
+seconds. Opening a row shows a panel for that incident; Ack in the panel acknowledges its named ID through
+the supplied API client. Incoming rows are inserted at the top without replacing existing rows or changing
+the open panel. Times are formatted in the
 viewer's locale and time zone; each `<time datetime>` retains the original UTC value. The build SHA in the
 footer matches the head's `build` meta tag. An acknowledgment receipt is retained in the API client's
 `acks` array and logged to the console for the proof report.
