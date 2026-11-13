@@ -19,6 +19,9 @@ viewer's locale and time zone; each `<time datetime>` retains the original UTC v
 footer matches the head's `build` meta tag. An acknowledgment receipt is retained in the API client's
 `acks` array and logged to the console for the proof report.
 
+Each new course night has its own session. Replace the ignored `app/config.js`, rebuild, and deploy
+again before recording a new round. Keep the session out of Git.
+
 ## The incident API
 
 Base = `api` from start-challenge. `api.js` already wraps both calls; keep using it.
